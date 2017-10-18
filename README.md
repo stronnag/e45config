@@ -10,7 +10,7 @@ http://www.cdebyte have a documented configuration API and a Windows
 This application provides a similar graphical configuration tool for
 Linux and other Poisx like OS.
 
-
+![application](https://raw.githubusercontent.com/wiki/stronnag/e45config/images/e45config.png)
 
 ## Platforms and OS
 
