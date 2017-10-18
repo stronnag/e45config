@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/org/mwptools/e45">
+    <file compressed="true">e45ui.ui</file>
+  </gresource>
+</gresources>
