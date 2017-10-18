@@ -3,14 +3,13 @@ e45config
 
 ## Overview
 
-The E45-TTL-100 LoRA device (and others in the same familiy) from
-http://www.cdebyte have a documented configuration API and a Windows
-(only) graphics configuration tool.
+The E45-TTL-100 LoRA device (and others in the same familiy) from [Ebyte](http://www.cdebyte.com/en/product-view-news.aspx?id=132)
+ have a [documented configuration API](http://www.cdebyte.com/en/downpdf.aspx?id=132) and a Windows (only) graphics configuration tool.
 
 This application provides a similar graphical configuration tool for
 Linux and other Poisx like OS.
 
-![application](https://raw.githubusercontent.com/wiki/stronnag/e45config/images/e45config.png)
+![Screen shot](https://raw.githubusercontent.com/wiki/stronnag/e45config/images/e45config.png)
 
 ## Platforms and OS
 
