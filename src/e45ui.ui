@@ -2,9 +2,56 @@
 <!-- Generated with glade 3.20.1 -->
 <interface>
   <requires lib="gtk+" version="3.18"/>
+  <object class="GtkAboutDialog" id="about">
+    <property name="can_focus">False</property>
+    <property name="type_hint">dialog</property>
+    <property name="program_name">e45 Config</property>
+    <property name="copyright" translatable="yes">(c) Jonathan Hudson 2017</property>
+    <property name="comments" translatable="yes">A configuration tool for E45-TTL-100 and similar LoRa devices</property>
+    <property name="website">https://github.com/stronnag/e45config</property>
+    <property name="website_label" translatable="yes">Github</property>
+    <property name="authors">Jonathan Hudson &lt;jh+e45config@daria.co.uk&gt;
+</property>
+    <property name="logo_icon_name">applications-system</property>
+    <property name="license_type">gpl-3-0</property>
+    <child internal-child="vbox">
+      <object class="GtkBox">
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox">
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+      </object>
+    </child>
+    <child>
+      <placeholder/>
+    </child>
+  </object>
+  <object class="GtkImage" id="image1">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-about</property>
+  </object>
   <object class="GtkWindow" id="toplevel">
     <property name="can_focus">False</property>
-    <property name="title" translatable="yes">E45 Setup</property>
     <property name="icon_name">preferences-other</property>
     <child>
       <object class="GtkBox">
@@ -608,7 +655,24 @@
       </object>
     </child>
     <child type="titlebar">
-      <placeholder/>
+      <object class="GtkHeaderBar">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="title">e45 config</property>
+        <property name="show_close_button">True</property>
+        <child>
+          <object class="GtkButton" id="about_bn">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="image">image1</property>
+            <property name="always_show_image">True</property>
+          </object>
+          <packing>
+            <property name="pack_type">end</property>
+          </packing>
+        </child>
+      </object>
     </child>
   </object>
 </interface>

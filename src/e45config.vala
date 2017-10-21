@@ -1,3 +1,22 @@
+
+/*
+ * Copyright (C) 2014 Jonathan Hudson <jh+mwptools@daria.co.uk>
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 3
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ */
+
 using Gtk;
 
 extern int open_serial(string dev, int baudrate);
@@ -20,7 +39,7 @@ public class  E45Config : Object
     private ComboBoxText iomode_c;
     private ComboBoxText wot_c;
 
-    public E45Config()
+    public E45Config(string?[]args)
     {
         var ser = new E45Serial();
         var         builder = new Gtk.Builder ();
@@ -47,8 +66,24 @@ public class  E45Config : Object
             txmode_c = builder.get_object("txmode_c") as ComboBoxText;
             iomode_c = builder.get_object("iomode_c") as ComboBoxText;
             wot_c = builder.get_object("wot_c") as ComboBoxText;
+            var about_bn = builder.get_object("about_bn") as Button;
+            var about = builder.get_object ("about") as Gtk.AboutDialog;
 
-            if (dev.text == null || dev.text.length == 0)
+
+            about.set_destroy_with_parent (true);
+            about.set_transient_for (window);
+            about.set_modal (true);
+
+            about_bn.clicked.connect (() => {
+                about.show_all();
+                about.run();
+                about.hide();
+                });
+
+
+            if (args.length == 2)
+                dev.text = args[1];
+            else
                 dev.text = "/dev/ttyUSB0";
 
             close.clicked.connect (() => {
@@ -290,6 +325,6 @@ public class E45Serial : Object
 int main (string[] args)
 {
     Gtk.init (ref args);
-    new E45Config();
+    new E45Config(args);
     return 0;
 }
